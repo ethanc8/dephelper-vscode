@@ -4,7 +4,7 @@
   "description": "A tool to help developers find and understand PyPI dependencies",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.92.0"
+    "vscode": "^1.101.0"
   },
   "categories": [
     "Other"
@@ -21,7 +21,26 @@
         "command": "dephelper-vscode.helloWorld",
         "title": "Hello World"
       }
-    ]
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "dephelper",
+          "title": "DepHelper",
+          "icon": "media/codicon/package.svg"
+        }
+      ]
+    },
+    "views": {
+      "dephelper": [
+        {
+          "type": "webview",
+          "id": "dephelper-vscode.dephelper",
+          "name": "DepHelper",
+          "icon": "media/codicon/package.svg"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
