@@ -18,8 +18,9 @@
   "contributes": {
     "commands": [
       {
-        "command": "dephelper-vscode.helloWorld",
-        "title": "Hello World"
+        "command": "dephelper-vscode.openEditor",
+        "category": "DepHelper",
+        "title": "Open as editor"
       }
     ],
     "viewsContainers": {
