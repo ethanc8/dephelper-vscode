@@ -78,23 +78,25 @@ export class SveltePanel {
 	public getWebviewContent(webview: Webview, uri: Uri) {
 		const scriptUri = getUri(webview, uri, ["out", "compiled", "bundle.js"]);
 		const styleUri = getUri(webview, uri, ["out", "compiled", "bundle.css"]);
+		const codiconsUri = getUri(webview, uri, ["node_modules", "@vscode/codicons", "dist", "codicon.css"]);
 		const nonce = getNonce();
 
 		return /*html*/ `
-						<!DOCTYPE html>
-						<html lang="en">
-								<head>
-								<title>Hello World</title>
-								<meta charset="UTF-8" />
-								<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-								<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource}; script-src 'nonce-${nonce}';">
-				<link href="${styleUri}" rel="stylesheet" />
-								<script defer nonce="${nonce}" src="${scriptUri}"></script>
-								</head>
-								<body id="app">
-								</body>
-						</html>
-				`;
+			<!DOCTYPE html>
+			<html lang="en">
+				<head>
+					<title>Hello World</title>
+					<meta charset="UTF-8" />
+					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+					<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource}; font-src ${webview.cspSource}; script-src 'nonce-${nonce}';"> 
+					<link href="${codiconsUri}" rel="stylesheet" id="vscode-codicon-stylesheet" />
+					<link href="${styleUri}" rel="stylesheet" />
+					<script defer nonce="${nonce}" src="${scriptUri}"></script>
+				</head>
+				<body id="app">
+				</body>
+			</html>
+		`;
 	}
 
 	private setWebviewMessageListener(webview: Webview) {

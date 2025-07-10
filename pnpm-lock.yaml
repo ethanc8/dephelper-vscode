@@ -11,6 +11,9 @@ importers:
       '@vscode-elements/elements':
         specifier: ^1.17.0
         version: 1.17.0
+      '@vscode/codicons':
+        specifier: ^0.0.36
+        version: 0.0.36
     devDependencies:
       '@rollup/plugin-commonjs':
         specifier: ^28.0.2
@@ -411,6 +414,9 @@ packages:
 
   '@vscode-elements/elements@1.17.0':
     resolution: {integrity: sha512-7kx1kqZGue3I5YcUOxy5fM/x32XSNzubStWQP5m0rG6Q5bvZVjQfmycsVjS+5PWk+a3dbFoM/XBt2ld1TjIQ/g==}
+
+  '@vscode/codicons@0.0.36':
+    resolution: {integrity: sha512-wsNOvNMMJ2BY8rC2N2MNBG7yOowV3ov8KlvUE/AiVUlHKTfWsw3OgAOQduX7h0Un6GssKD3aoTVH+TF3DSQwKQ==}
 
   '@vscode/test-cli@0.0.4':
     resolution: {integrity: sha512-Tx0tfbxeSb2Xlo+jpd+GJrNLgKQHobhRHrYvOipZRZQYWZ82sKiK02VY09UjU1Czc/YnZnqyAnjUfaVGl3h09w==}
@@ -2133,6 +2139,8 @@ snapshots:
   '@vscode-elements/elements@1.17.0':
     dependencies:
       lit: 3.3.0
+
+  '@vscode/codicons@0.0.36': {}
 
   '@vscode/test-cli@0.0.4':
     dependencies:
