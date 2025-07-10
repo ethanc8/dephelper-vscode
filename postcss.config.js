@@ -1,6 +1,6 @@
 module.exports = {
-    plugins: {
-      autoprefixer: {},
-      /* twconfig */
-    },
+		plugins: {
+			autoprefixer: {},
+			/* twconfig */
+		},
 };

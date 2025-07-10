@@ -2,8 +2,8 @@ import * as vscode from "vscode";
 import { Uri, WebviewPanel, Disposable, ViewColumn, Webview } from "vscode";
 
 interface Payload {
-    title: string;
-    msg: string;
+		title: string;
+		msg: string;
 }
 
 function getUri(webview: Webview, extensionUri: Uri, pathList: string[]) {
@@ -21,13 +21,13 @@ export function getNonce() {
 }
 
 /* 
-    This is the class that will handle all things related to the svelte panel
-    The base for this class was found here:
-    https://github.com/microsoft/vscode-webview-ui-toolkit-samples/blob/main/frameworks/hello-world-svelte/src/panels/HelloWorldPanel.ts
+		This is the class that will handle all things related to the svelte panel
+		The base for this class was found here:
+		https://github.com/microsoft/vscode-webview-ui-toolkit-samples/blob/main/frameworks/hello-world-svelte/src/panels/HelloWorldPanel.ts
 
-    If you need any utilties for your webview panel, add them here
+		If you need any utilties for your webview panel, add them here
 
-    You can call them through SveltePanel.currentPanel.function()
+		You can call them through SveltePanel.currentPanel.function()
 */
 export class SveltePanel {
 	private readonly panel: WebviewPanel;
@@ -81,20 +81,20 @@ export class SveltePanel {
 		const nonce = getNonce();
 
 		return /*html*/ `
-            <!DOCTYPE html>
-            <html lang="en">
-                <head>
-                <title>Hello World</title>
-                <meta charset="UTF-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource}; script-src 'nonce-${nonce}';">
+						<!DOCTYPE html>
+						<html lang="en">
+								<head>
+								<title>Hello World</title>
+								<meta charset="UTF-8" />
+								<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+								<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource}; script-src 'nonce-${nonce}';">
 				<link href="${styleUri}" rel="stylesheet" />
-                <script defer nonce="${nonce}" src="${scriptUri}"></script>
-                </head>
-                <body id="app">
-                </body>
-            </html>
-        `;
+								<script defer nonce="${nonce}" src="${scriptUri}"></script>
+								</head>
+								<body id="app">
+								</body>
+						</html>
+				`;
 	}
 
 	private setWebviewMessageListener(webview: Webview) {
@@ -103,7 +103,7 @@ export class SveltePanel {
 				const command = message.title;
 				const text = message.msg;
 
-                // Add more commands here
+								// Add more commands here
 				switch (command) {
 					case "hello":
 						vscode.window.showInformationMessage(text);
