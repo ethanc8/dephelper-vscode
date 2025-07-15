@@ -76,6 +76,7 @@
 	},
 	"dependencies": {
 		"@vscode-elements/elements": "^1.17.0",
+		"@vscode-elements/elements-lite": "^0.4.0",
 		"@vscode/codicons": "^0.0.36"
 	}
 }
