@@ -50,6 +50,6 @@
     </div>
 
     <span class="vscode-label normal" style:flex="1">{pkg.description}</span>
-    <span class="vscode-label normal" style:flex="1">@{pkg.gh_repo}</span>
+    <span class="vscode-label normal" style:flex="1">{pkg.gh_repo}</span>
   </div>
 </Screen>

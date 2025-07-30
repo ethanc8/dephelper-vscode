@@ -61,7 +61,7 @@ export class SvelteViewProvider implements vscode.WebviewViewProvider {
 					<title>Hello World</title>
 					<meta charset="UTF-8" />
 					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-					<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource}; font-src ${webview.cspSource}; script-src 'nonce-${nonce}';"> 
+					<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource}; font-src ${webview.cspSource}; script-src 'nonce-${nonce}';"> --> 
 					<link href="${codiconsUri}" rel="stylesheet" id="vscode-codicon-stylesheet" />
 					<link href="${styleUri}" rel="stylesheet" />
 					<script defer nonce="${nonce}" src="${scriptUri}"></script>

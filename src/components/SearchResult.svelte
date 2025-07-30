@@ -6,7 +6,10 @@
 </script>
 
 <!-- https://gist.github.com/Munawwar/7926618 for hbox/vbox pattern -->
-<button {onclick}>
+<button
+  {onclick}
+  style:background-color="var(--vscode-sideBar-background)"
+>
 <div
   style:display="flex"
   style:flex-direction="column"
