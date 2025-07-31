@@ -161,7 +161,8 @@
     </span>
     {/if}
   </Collapsible>
-
+ 
+  {#if pkg.project.scorecard}
   <Collapsible
     title="OpenSSF scorecard"
     open={false}>
@@ -169,7 +170,36 @@
       <Badge>{pkg.project.scorecard.overallScore}</Badge>
     {/snippet}
     
+    {#each pkg.project.scorecard.checks as check}
+      <Collapsible
+        title={check.name}
+        open={false}>
+        {#snippet decorations()}
+          <Badge>{check.score}</Badge>
+        {/snippet}
+
+        <div
+          style:display="flex"
+          style:flex-direction="row"
+          style:align-content="flex-start"
+          style:width="100%"
+        >
+          <Badge>{check.score}</Badge>
+          <span class="vscode-label" style:font-weight="normal">{check.reason}</span>
+        </div>
+
+        {#if check.details && check.details.length != 0}
+        <span class="vscode-label">Details</span>
+        {#each check.details as detail}
+          <span class="vscode-label" style:font-weight="normal">{detail}</span>
+        {/each}
+        {/if}
+
+      </Collapsible>
+    {/each}
+    
   </Collapsible>
+  {/if}
 
 
 </Screen>
