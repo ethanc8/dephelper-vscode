@@ -3,10 +3,10 @@
   import Screen from "./Screen.svelte";
   import ActionButton from "./widgets/ActionButton.svelte";
 
-  import "@vscode-elements/elements/dist/vscode-scrollable/index.js";
+  // import "@vscode-elements/elements/dist/vscode-scrollable/index.js";
+  import "@vscode-elements/elements-lite/components/label/label.css";
   import { navigateTo } from "../nav.svelte";
-
-  
+ 
 
   // let fakePackage = {
   //   "pypi_name": "wheel",
@@ -89,7 +89,10 @@
         "stars": has_project ? project.starsCount : 0,
         "monthly_downloads": has_download_stats ? download_stats.data.last_month : 0,
         // FIXME: We'll need to serve PyPI metadata descriptions ourselves
-        "description": has_project ? project.description : "No description found"
+        "description": has_project ? project.description : "No description found",
+        pkgres,
+        version,
+        project
       }
     ]
 
